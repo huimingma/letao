@@ -1,34 +1,9 @@
-
-.panel-title{
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    text-align: center;
-}
-
-.mt_150{
-    margin-top: 150px;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active{
-    text-decoration: none;
-}
-
-ul,li{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-body{
+/* body{
     background-color: #fff;
 }
 
 /* 左侧部分 */
-.lt_aside{
+/* .lt_aside{
     width: 180px;
     height: 100%;
     background-color: #222D32;
@@ -52,10 +27,10 @@ body{
     font-size: 25px;
     display: block;
     color: #fff;
-}
+} */
 
 /* 头像区域 */
-.user{
+/* .user{
     margin-top: 30px;
 }
 
@@ -73,10 +48,10 @@ body{
     font-size: 18px;
     text-align: center;
     color: #fff;
-}
+} */
 
 /* 管理 */
-.category{
+/* .category{
     padding-top: 10px;
 }
 
@@ -87,13 +62,6 @@ body{
     padding-left: 40px;
     color: #fff;
     border-left: 3px solid transparent ;
-}
-.category div.child{
-    display: none;
-}
-
-.category ul li a.active{
-    border-left: 3px solid green;
 }
 
 .category ul li .child a{
@@ -106,11 +74,11 @@ body{
 
 .category ul li a i{
     margin-right: 5px;
-}
+} */
 
 
 /* 右侧 */
-.lt_right{
+/* .lt_right{
     height: 2000px;
     padding-left: 180px;
     padding-top: 50px;
@@ -134,10 +102,10 @@ body{
 }
 .lt_right .top.hidemenu{
     padding-left: 0;
-}
+} */
 
 /* 上方的top */
-.lt_right .top a{
+/* .lt_right .top a{
     width: 50px;
     height: 50px;
     display: block;
@@ -146,26 +114,20 @@ body{
     text-align: center;
     line-height: 50px;
 
-}
+} */
 
 /* 下方的主体区域 */
-.container_fluid{
+/* .container_fluid{
    
 }
 
 .container-fluid .breadcrumb{
     margin-top: 20px;
-}
+} */ 
 
-/* 模态框信息提示颜色 */
-.red{
-    color: #A94442;
+/* 设置echarts图标的大小 */
+.echarts_left,
+.echarts_right {
+  width: 48%;
+  height: 400px;
 }
-
-/* 使所有表格居中 */
-.table.table-bordered td,
-.table.table-bordered th {
-  text-align: center;
-  vertical-align: middle;
-}
-

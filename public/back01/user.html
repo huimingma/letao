@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+   
     <link rel="stylesheet" href="./css/comment.css" />
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/user.css">
+ 
 </head>
 
 <body>
@@ -33,19 +36,19 @@
         <div class="category">
             <ul>
                 <li>
-                    <a href="user.html">
+                    <a href="user.html" class="active">
                         <i class="glyphicon glyphicon-user"></i>
                         <span>用户管理</span>
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;" class="mange" >
+                    <a href="javascript:;" class="mange">
                         <i class="glyphicon glyphicon-list"></i>
                         <span>分类管理</span>
                     </a>
                     <!-- 用于切换展示的二级列表 -->
                     <div class="child">
-                        <a href="first.html" class="active">一级分类</a>
+                        <a href="first.html">一级分类</a>
                         <a href="second.html">二级分类</a>
                     </div>
                 </li>
@@ -76,16 +79,32 @@
             <!-- 面包屑导航 -->
             <ol class="breadcrumb">
                 <li><a href="#">管理系统</a></li>
-                <li><a href="#">首页</a></li>
-            </ol>
-
-            <!-- echarts 可视化区域 -->
-            <div class="lt_content">
-                <div class="echarts_left pull-left"></div>
-                <div class="echarts_right pull-right"></div>
-            </div>
-
-            <div id="main" style="width: 48%;height:400px;"></div>
+                <li ><a href="#" class="color">用户首页</a></li>
+            </ol>		
+            
+            <!-- 表格 -->
+            <!-- 添加 .table-bordered 类为表格和其中的每个单元格增加边框。
+            通过添加 .table-hover 类可以让 <tbody> 中的每一行对鼠标悬停状态作出响应。 -->
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>手机号</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>itcast</td>
+                        <td>15757771111</td>
+                        <td>正常</td>
+                        <td><button class="btn btn-danger">禁用</button></td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
     </div>
@@ -110,16 +129,36 @@
         </div>
     </div>
 
+    <script type="text/html" id="tmp">
+        {{each list v i}}
+            <tr>
+                <td>{{v.id}}</td>
+                <td>{{v.username}}</td>
+                <td>{{v.mobile}}</td>
+                <td>{{v.isDelete==1 ? '正常':'禁用'}}</td>
+                <td>
+                    {{if v.isDelete==1}}
+                    <button class="btn btn-danger">禁用</button>
+                    {{/if}}
+                    {{if v.isDelete==0}}
+                    <button class="btn btn-success">启用</button>
+                    {{/if}}
+                </td>
+            </tr>
+        {{/each}}
+
+    </script>
+
     <script src="./lib/jquery/jquery.min.js"></script>
-    <!-- <script></script> -->
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <script src="./lib/echarts/echarts.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
 
     <script src="./js/comment.js"></script>
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
     <script src="./js/isLogin.js"></script>
+    <script src="./js/user.js"></script>
 
 </body>
 
