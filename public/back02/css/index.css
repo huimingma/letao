@@ -1,0 +1,126 @@
+body{
+    background-color: #fff;
+}
+.lt_aside{
+    width: 180px;
+    height: 100%;
+    background-color: #222D32;   
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all 1s;
+}
+.lt_aside.hidemenu{
+    left: -180px;
+}
+.lt_aside .brand{
+    background-color: #367FA9;
+  
+}
+
+
+.lt_aside .brand a{
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+
+.lt_aside .nav  ul .child a{
+    padding-left: 60px;
+
+}
+.lt_aside .nav li.child{
+    display: none;
+}
+
+.user{
+    padding-top: 30px;
+}
+.user img{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+   margin: 0 auto;
+}
+.user p{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+/* 导航 */
+.nav{
+   padding-top: 20px;
+}
+.nav ul li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 40px;
+    border-left: 3px solid transparent;
+    color: #fff;
+}
+.nav ul li a i{
+    margin-right: 5px;
+}
+.nav ul li a.active{
+    border-left: 3px solid #069;
+    background-color: #1D1F21;
+}
+
+/* 右侧头部 */
+
+.lt_main {
+    height: 2000px;
+    padding-left: 180px;
+    padding-top: 50px;
+    transition: 1s;
+}
+
+ .lt_topbar{
+    width: 100%;
+    height: 50px;
+    background-color: #3C8DBC;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 180px;
+    transition: 1s;
+    z-index:998;
+}
+.lt_topbar.hidemenu{
+    padding-left: 0px;
+}
+.lt_main .lt_topbar a{
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    width: 50px;
+    transition: all 1s;
+}
+.lt_main.hidemenu{
+    padding-left: 0px;
+}
+
+.mt_20{
+    margin-top: 20px;
+}
+
+/* 设置echarts的宽高 */
+.echarts_left,
+.echarts_right {
+  width: 48%;
+  height: 400px;
+}

@@ -1,8 +1,8 @@
-NProgress.start(); //开启进度条
+// NProgress.start(); //开启进度条
 
-setTimeout(function(){
-    NProgress.done(); //关闭进度条
-},2000);
+// setTimeout(function(){
+//     NProgress.done(); //关闭进度条
+// },2000);
 
 /**
  * 需求：
@@ -30,4 +30,45 @@ setTimeout(function(){
      setTimeout(function () { 
          NProgress.done();
       },1000)
+    // NProgress.done();
  });
+
+
+ $(function(){
+    //  1、左侧的二级菜单的切换
+    $('.category').click(function(){
+        $(this).next().stop().slideToggle();
+    })
+
+    // 2、左侧侧边栏切换
+    $('.icon_left').click(function(){
+        $('.lt_aside').toggleClass('hidemenu');
+        $('.lt_main').toggleClass('hidemenu');
+        $('.lt_topbar').toggleClass('hidemenu');
+    })
+
+    // 3、退出功能
+    //   1、点击右侧按钮，显示模态框
+    $('.icon_right').click(function(){
+        $('#logoutModal').modal('show');
+    })
+
+        // 2、点击退出模态框的退出按钮，完成退出功能
+    $('#logoutBtn').click(function(){
+
+        // 发送ajax请求，让后台销毁当前用户的登录状态
+        $.ajax({
+            type:'get',
+            url:'/employee/employeeLogout',
+            dataType:'json',
+            success:function(info){
+                if(info.success){
+                    // 退出成功了，跳转登录页
+                    location.href="login.html";
+                }
+            }
+        })
+
+    })
+
+ })

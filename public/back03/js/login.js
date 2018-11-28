@@ -78,11 +78,10 @@ $(function () {
     $("[type='reset']").click(function () {
         // $('#form').data('bootstrapValidator').resetForm();
         // $('#form').bootstrapValidator({});
-
         // $("#form").bootstrapValidator(options);
-        $("#form").bootstrapValidator();
+
         //  $("#form").bootstrapValidator({resetFormData:true});
-        // $("#form").data('bootstrapValidator').resetForm();
+        $("#form").data('bootstrapValidator').resetForm();
 
     })
 
