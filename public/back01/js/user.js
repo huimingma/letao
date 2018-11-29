@@ -12,8 +12,7 @@ $(function(){
                 pageSize:pageSize,
             },
             success:function(info){
-                console.log(info);
-
+                // console.log(info);
                 var html=template('tmp',{list:info.rows});
                 $("tbody").html(html);
             }
