@@ -93,7 +93,7 @@ $(function () {
         $('[name="brandId"]').val(id);
 
         // 将隐藏域的状态改成VALID
-        // $('#form').data('bootstrapValidator').updateStatus('brandId','VALID');
+        $('#form').data('bootstrapValidator').updateStatus('brandId','VALID');
     });
 
     // 5.配置文件上传
@@ -223,7 +223,7 @@ $(function () {
     $('#form').on('success.form.bv', function (e) {
         e.preventDefault();
 
-        var paramStr = $('#form').serialize();
+        var paramsStr = $('#form').serialize();
 
         //  注意拼接上图片的数据
         paramsStr += "&picName1=" + picArr[0].picName + "&picAddr1=" + picArr[0].picAddr;
@@ -233,7 +233,7 @@ $(function () {
         $.ajax({
             url: "/product/addProduct",
             type: 'post',
-            data: paramStr,
+            data: paramsStr,
             dataType: 'json',
             success: function (info) {
                 // console.log(info);
