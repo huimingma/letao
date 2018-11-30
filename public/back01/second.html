@@ -163,9 +163,14 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="请输入二级分类" name="categoryName"
-                                data-bv-field="categoryName">
+                            <input type="text" class="form-control" placeholder="请输入二级分类" name="brandName"
+                               >
+                               <!-- data-bv-field="categoryName" -->
                         </div>
+
+                        <!-- <div class="form-group">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类">
+                          </div> -->
 
                         <div class="form-group">
                             <label for="fileupload" class="btn btn-default">上传图片</label>
@@ -198,8 +203,9 @@
         {{each rows v i}}
             <tr>
                 <td>{{i+1+(page-1)*size}}</td>
-                <td>{{v.brandName}}</td>
                 <td>{{v.categoryName}}</td>
+                <td>{{v.brandName}}</td>
+               
                 <td><img src="{{v.brandLogo}}" alt="" style="height: 50px;"></td>
             </tr>
         {{/each}}

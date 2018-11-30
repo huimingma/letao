@@ -137,4 +137,33 @@ $(function () {
             }
         }
     })
+
+    // 6、注册表单成功校验事件，阻止默认提交，通过ajax提交
+    $('#form').on('success.form.bv',function(e){
+        e.preventDefault();
+        
+        $.ajax({
+            url:'/category/addSecondCategory',
+            type:'post',
+            data:$('#form').serialize(),
+            dataType:"json",
+            success:function(info){
+                // console.log(info);
+                // 关闭模态框
+                $('#addModal').modal('hide');
+                // 更新当前页
+                currentPage=1;
+                // 重新渲染
+                render();
+
+                // 重置模态框的内容 但是按钮和图片不是表单元素，需要手动重置
+                $('#form').data('bootstrapValidator').resetForm(true);
+                // 重置下拉菜单
+                $('#dropdownText').text('请选择一级分类');
+                // 图片重置
+                $('#imgBox img').attr('src','./images/wlk1.jpg');
+
+            }
+        })
+    })
 })
