@@ -24,7 +24,7 @@
         </div>
         <!-- 头像 -->
         <div class="user">
-            <img src="./images/1.jpg" alt="">
+            <img src="./images/2.png" alt="">
             <p>超级管理员</p>
         </div>
         <!-- 导航 -->
@@ -71,7 +71,7 @@
 
             <ol class="breadcrumb">
                 <li><a href="#">管理系统</a></li>
-                <li><a href="#">用户首页</a></li>
+                <li><a href="#" style="color: #777">用户首页</a></li>
             </ol>
 
 
@@ -88,6 +88,8 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    <!-- 填个坑 -->
                     <tr>
                         <td>1</td>
                         <td>itcast</td>
@@ -99,15 +101,9 @@
             </table>
         </div>
 
-        <div class="text-right">
+        <!-- 分页容器 -->
+        <div class="pull-right">
             <ul id="paginator" class="pagination">
-                <li class="active"><a title="Current page is 1"><a>&lt;&lt;</a></li>
-                <li><a >&lt;</a></li>
-                <li><a >1</a></li>
-                <li >2</a></li>
-                <li><a >3</a></li>
-                <li><a >&gt;</a></li>
-                <li><a >&gt;&gt;</a></li>
             </ul>
         </div>
     </div>
@@ -116,7 +112,7 @@
 
 
 
-    <!-- 遮罩层 -->
+    <!-- 退出遮罩层 -->
 
     <div class="modal fade" id="logoutModal" tabindex="-1">
         <div class="modal-dialog">
@@ -137,39 +133,48 @@
     </div>
 
 
-    <!-- 遮罩层2 -->
-    <div class="modal fade" id="logoutModal2" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p class="red"><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary" id="logoutBtn">确定</button>
-                    </div>
+    <!-- 操作遮罩层 -->
+    <div class="modal fade" id="addModal" tabindex="-1">
+        <!-- modal-sm控制模版引擎的大小 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p style="color: #A94442"><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary confirm">确定</button>
                 </div>
             </div>
-     </div>
+        </div>
+    </div>
 
-    <script type="text/html" id="tmp">
-        {{each list v i}}
-             <tr>		
-                <td >{{v.id}}</td>
+    <!-- 注意这里不能直接用id当作用户的序号，因为添加的时候会把新添加的用户，显示在第一位，如果是用户id的话，不太合适，所以用id，但是id是从0开始的，所有i+1,但是如果这样写每页都是从i+1开始，为了解决下一页不是从i+1开始，而是应该加上前面页码的条数， 所以需要计算  i+1+(page-1)*size   下标+1+（当前页码-1）*每页的条数     -->
+
+    <!-- 这样写也可以，但是不严谨
+    {{if v.isDelete==1}}
+         <button class="btn btn-danger">禁用</button>
+    {{/if}}
+    {{if v.isDelete==0}}
+        <button class="btn btn-success">启用</button>
+    {{/if}} -->
+    <script type="text/html" id="userTmp">
+        <!-- 如果写 each list v i  在模版对象中要重新定义 -->
+        {{each rows v i}} 
+            <tr>		
+                <td >{{i+1+(page-1)*size}}</td>
                 <td>{{v.username}}</td>
                 <td>{{v.mobile}}</td>
                 <td>{{v.isDelete==1?'正常':'禁用'}}</td>
                 <td  data-id="{{v.id}}"> 
-
                     {{if v.isDelete==1}}
-                    <button class="btn btn-danger">禁用</button>
-                    {{/if}}
-                    {{if v.isDelete==0}}
-                    <button class="btn btn-success">启用</button>
+                        <button class="btn btn-danger">禁用</button>
+                    {{else}}
+                        <button class="btn btn-success">启用</button>
                     {{/if}}
                 </td>
             </tr>
