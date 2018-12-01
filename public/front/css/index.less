@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+html,body{
+    height: 100%;
+}
+
+.lt_container{
+    width: 100%;
+    height: 100%;
+    // background-color: skyblue;
+    margin: 0 auto;
+    max-width: 640px;
+    min-width: 320px;
+    position: fixed;
+    // overflow: hidden;
+}
+
+// 头部区域
+.header{
+    width: 100%;
+    height: 45px;
+    background-color: #006699;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .icon_left a,
+    .icon_right a{
+        display: block;
+        width: 45px;
+        height: 45px;
+        i{
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            color: #fff;
+        }
+    }
+    .icon_left{
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+    .icon_right{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .content_title{
+        padding-left: 45px;
+        padding-right: 45px;
+        p{
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            font-size: 24px;
+            font-style: normal;
+        }
+    }
+}
+
+// 主体内容
+.main{
+    padding-top: 45px;
+    width: 100%;
+    height: 500px;
+    background-color: skyblue;
+    .mui-scroll-wrapper{
+        top: 45px;
+    }
+}
+
+//底部
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #007aff;
+    height: 55px;
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    li{
+        float: left;
+        width: 25%;
+        height: 100%;
+        a{
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            display: block;
+            padding-top: 8px;
+            text-align: center;
+            p{
+                font-size: 14px;
+            }   
+        }
+    }
+}
+
